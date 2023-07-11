@@ -97,6 +97,12 @@ def get_public_key():
     return jsonify({'public_key': server_public_key})
 
 
+@app.route('/', methods=['GET'])
+def hello():
+    return "MOuad : hello world"
+
+
+
 @app.route('/decrypt_message', methods=['POST'])
 def decrypt_message():
     # Receive the encrypted message from the client
@@ -124,4 +130,4 @@ def decrypt_message():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False,host='0.0.0.0')
